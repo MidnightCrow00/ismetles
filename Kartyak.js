@@ -6,6 +6,7 @@ export default class Kartyak {
   constructor(lista, taroloElem) {
     this.#lista = lista;
     this.#taroloElem = taroloElem;
+    console.log(this.#taroloElem)
     this.#taroloElem.empty()
     this.kutyaKiIr();
   }

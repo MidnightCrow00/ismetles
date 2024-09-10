@@ -11,5 +11,5 @@ $(window).on("kiválaszt",()=>{
     console.log(event.detail)
     kivalasztottKutyalista.push(event.detail)
     console.log(kivalasztottKutyalista)
-    new Kartyak(kivalasztottKutyalista)
+    new Kartyak(kivalasztottKutyalista,kivElem)
 })

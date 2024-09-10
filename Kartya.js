@@ -8,8 +8,9 @@ export default class Kartya {
     this.#szuloElem = szuloElem;
     this.kutyaKiIr();
     //gombelem a Kartya saját adattagja
-    this.gombElem=$(".kivalaszt:last-child")
-    console.log(this.gombElem)
+    this.gombElem = $(".kivalaszt:last-child");
+    console.log(this.gombElem);
+    this.esemenyKezelo();
   }
   //tagfüggyvény
   kutyaKiIr() {
@@ -24,9 +25,15 @@ export default class Kartya {
             </div>
             `);
   }
-  esemenyKezelo(){
+  esemenyKezelo() {
     this.gombElem.on("click", ()=>{
-      console.log(this)
-    })
+      console.log(this);
+      //létrehozunk egy saját eseményt
+      const e=new CustomEvent("kiválaszt", {detail:this.#obj})
+      window.dispatchEvent(e)
+    });
   }
 }
+
+//function névtelenfüggvények esetén a this azt a httml dom elemet jelenti amelyik az eseményt kiváltotta vagy amelyikre éppen hivatkozunk
+// nyíl függvény esetén a this arra az osztály példányra mutat amelyik az adott nyilfüggvény körbefogja

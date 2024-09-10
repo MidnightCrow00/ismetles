@@ -25,6 +25,8 @@ export default class Kartya {
             `);
   }
   esemenyKezelo(){
-    this.gombElem.on("click", )
+    this.gombElem.on("click", ()=>{
+      console.log(this)
+    })
   }
 }
